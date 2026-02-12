@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Gautam Kumar — Portfolio | Robotics, Computer Vision, Software" />
+  <meta name="description" content="Gautam Kumar — ML Engineer | Computer Vision, Transformers, LLM/VLM, Deployment" />
   <title>Gautam Kumar | Portfolio</title>
 
   <link rel="preconnect" href="https://api.github.com" />
@@ -18,10 +18,16 @@
         <span>Gautam Kumar</span>
       </a>
 
-      <nav class="nav" aria-label="Primary">
+      <button id="menuBtn" class="menu-btn" aria-label="Open menu" aria-expanded="false">
+        <span class="menu-bars" aria-hidden="true"></span>
+      </button>
+
+      <nav id="nav" class="nav" aria-label="Primary">
         <a href="#highlights">Highlights</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#education">Education</a>
         <a href="#skills">Skills</a>
         <a href="#contact" class="btn btn-small">Contact</a>
       </nav>
@@ -33,64 +39,78 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Robotics • Computer Vision • Software Engineering</p>
-          <h1>Building reliable perception + automation systems that ship.</h1>
+          <p class="eyebrow">ML Engineer • Computer Vision • Transformers • LLM/VLM • Deployment</p>
+
+          <h1>Shipping real-time vision + language systems with measurable impact.</h1>
 
           <p class="lede">
-            I’m <strong>Gautam Kumar</strong>. I work on robotics and vision-driven systems—from data and models to
-            production software. I like measurable outcomes, clean engineering, and products that work in the real world.
+            I’m <strong>Gautam Kumar</strong> — ML Engineer with <strong>2.5+ years</strong> of experience building and deploying
+            real-time computer vision systems, transformer architectures, and LLM/VLM applications.
           </p>
 
           <div class="hero-cta">
-            <a class="btn" href="#projects">View projects</a>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/gautam-hcscv/" target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-            <a class="btn btn-ghost" href="https://github.com/gautamHCSCV" target="_blank" rel="noreferrer">
-              GitHub
-            </a>
+            <a class="btn" href="#projects">View selected projects</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/gautam-hcscv/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn btn-ghost" href="https://github.com/gautamHCSCV" target="_blank" rel="noreferrer">GitHub</a>
           </div>
 
-          <ul class="proof">
-            <li><span class="kpi">Impact</span><span class="kpi-sub">Optimized pipelines, shipped features, improved reliability</span></li>
-            <li><span class="kpi">Focus</span><span class="kpi-sub">CV, robotics perception, backend + tooling</span></li>
-            <li><span class="kpi">Strength</span><span class="kpi-sub">End-to-end delivery (prototype → production)</span></li>
-          </ul>
+          <div class="proof-grid">
+            <div class="proof-card">
+              <div class="proof-kpi">Latency ↓</div>
+              <div class="proof-sub">DeBERTa-v3 on Triton, reduced latency by 70%</div>
+            </div>
+            <div class="proof-card">
+              <div class="proof-kpi">CV Pipelines</div>
+              <div class="proof-sub">YOLOv8 segmentation + defect classification</div>
+            </div>
+            <div class="proof-card">
+              <div class="proof-kpi">VLM Work</div>
+              <div class="proof-sub">Florence-2 finetune + benchmarks (captioning/QA)</div>
+            </div>
+          </div>
         </div>
 
         <aside class="hero-card" aria-label="Quick info">
           <div class="card">
-            <h2 class="card-title">Quick info</h2>
+            <div class="profile">
+              <img id="ghAvatar" class="avatar" alt="GitHub avatar" />
+              <div class="profile-meta">
+                <div class="profile-name">Gautam Kumar</div>
+                <div id="ghBio" class="profile-bio muted small">Loading GitHub bio…</div>
+              </div>
+            </div>
+
             <dl class="meta">
               <div>
                 <dt>Location</dt>
-                <dd>India (IST)</dd>
+                <dd id="ghLocation">India (IST)</dd>
               </div>
               <div>
-                <dt>Open to</dt>
-                <dd>Robotics / CV roles, impactful projects</dd>
-              </div>
-              <div>
-                <dt>Links</dt>
+                <dt>Email</dt>
                 <dd class="links">
-                  <a href="https://www.linkedin.com/in/gautam-hcscv/" target="_blank" rel="noreferrer">LinkedIn</a>
-                  <a href="https://github.com/gautamHCSCV" target="_blank" rel="noreferrer">GitHub</a>
+                  <a href="mailto:pgautam05112000@gmail.com">pgautam05112000@gmail.com</a>
+                  <a href="mailto:kumar.156@alumini.iitj.ac.in">kumar.156@alumini.iitj.ac.in</a>
                 </dd>
+              </div>
+              <div>
+                <dt>Phone</dt>
+                <dd><a href="tel:+919523730105">+91 95237 30105</a></dd>
               </div>
             </dl>
 
             <hr class="sep" />
 
-            <h3 class="card-subtitle">Signature strengths</h3>
-            <ul class="bullets">
-              <li>Computer vision + model integration</li>
-              <li>Data pipelines, evaluation, automation</li>
-              <li>Readable, maintainable production code</li>
-            </ul>
-
-            <p class="small muted">
-              Tip: Replace the bullets above with your strongest measurable wins.
-            </p>
+            <h3 class="card-subtitle">Core stack</h3>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">PyTorch</span>
+              <span class="tag">TensorFlow</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Triton</span>
+              <span class="tag">GCP</span>
+              <span class="tag">Azure</span>
+            </div>
           </div>
         </aside>
       </div>
@@ -101,26 +121,26 @@
       <div class="container">
         <div class="section-head">
           <h2>Highlights</h2>
-          <p class="muted">A few outcomes I’m proud of (edit these with real metrics and scope).</p>
+          <p class="muted">A few outcomes across CV + LLM/VLM + deployment.</p>
         </div>
 
         <div class="grid-3">
           <article class="tile">
-            <h3>Shipped production CV</h3>
-            <p>Deployed vision components with monitoring, evaluation, and failure handling.</p>
-            <p class="small muted">Example metric: ↑ accuracy, ↓ latency, ↓ defects</p>
+            <h3>70% latency reduction</h3>
+            <p>Benchmarked + fine-tuned LLM QA for key-value extraction and deployed DeBERTa-v3 on Triton.</p>
+            <p class="small muted">Focus: throughput, stability, deployment quality</p>
           </article>
 
           <article class="tile">
-            <h3>Improved system reliability</h3>
-            <p>Built tooling to catch edge cases early and reduce ops load.</p>
-            <p class="small muted">Example metric: ↓ false positives, ↓ downtime</p>
+            <h3>Defect detection pipeline</h3>
+            <p>Implemented YOLOv8 segmentation for damaged regions on boxes + defect type classification.</p>
+            <p class="small muted">Focus: real-world robustness, reliable inference</p>
           </article>
 
           <article class="tile">
-            <h3>Ownership end-to-end</h3>
-            <p>From dataset + training to integration, testing, and rollout.</p>
-            <p class="small muted">Example scope: multi-site / multi-sensor</p>
+            <h3>VLM finetuning + benchmarks</h3>
+            <p>Florence-2 finetuning/benchmarking for detection, image captioning, and QA tasks.</p>
+            <p class="small muted">Focus: eval design, iteration speed</p>
           </article>
         </div>
       </div>
@@ -131,33 +151,28 @@
       <div class="container">
         <div class="section-head row">
           <div>
-            <h2>Projects</h2>
+            <h2>Selected Projects</h2>
             <p class="muted">
-              Pulled live from GitHub. Edit the “featured” list in <code>script.js</code> if you want tight curation.
+              Curated to 4 repos (not all repos). Cards load live from GitHub.
             </p>
           </div>
 
           <div class="controls">
-            <label class="switch" title="Show forks">
-              <input id="toggleForks" type="checkbox" />
-              <span>Show forks</span>
-            </label>
-
             <select id="sortMode" aria-label="Sort projects">
-              <option value="featured">Featured</option>
-              <option value="stars">Most starred</option>
+              <option value="curated">Curated</option>
               <option value="updated">Recently updated</option>
+              <option value="stars">Most starred</option>
               <option value="name">Name (A–Z)</option>
             </select>
           </div>
         </div>
 
-        <div id="projectsState" class="muted small">Loading repositories…</div>
-        <div id="projectsGrid" class="grid-3" aria-live="polite"></div>
+        <div id="projectsState" class="muted small">Loading selected repositories…</div>
+        <div id="projectsGrid" class="grid-2" aria-live="polite"></div>
 
-        <p class="small muted">
-          Want even more polish? Add screenshots by creating <code>/assets</code> images and linking them inside each project card.
-        </p>
+        <div class="note">
+          <strong>Tip:</strong> Add better GitHub repo descriptions + README screenshots/GIFs to make these cards pop.
+        </div>
       </div>
     </section>
 
@@ -166,31 +181,108 @@
       <div class="container">
         <div class="section-head">
           <h2>Experience</h2>
-          <p class="muted">Keep each role focused on impact. 2–4 bullets per role is enough.</p>
+          <p class="muted">Impact-first bullets. Clear scope. Clear results.</p>
         </div>
 
         <div class="stack">
           <article class="timeline">
             <div class="timeline-top">
-              <h3>Role Title — Company</h3>
-              <span class="pill">YYYY — YYYY</span>
+              <h3>Machine Learning Engineer — Vimaan Robotics</h3>
+              <span class="pill">Sep 2024 — Present</span>
             </div>
             <ul class="bullets">
-              <li>Owned X system → delivered Y improvement (metric).</li>
-              <li>Built A pipeline/tooling → reduced B (metric).</li>
-              <li>Collaborated with cross-functional teams to ship feature Z.</li>
+              <li>Benchmarked + fine-tuned LLM QA models for key-value extraction from OCR context; deployed DeBERTa-v3 on Triton, reducing latency by <strong>70%</strong>.</li>
+              <li>Implemented YOLOv8 segmentation pipeline for damaged region detection on boxes + defect type classification.</li>
+              <li>Finetuned + benchmarked Florence-2 VLM for detection, image captioning, and QA.</li>
             </ul>
           </article>
 
           <article class="timeline">
             <div class="timeline-top">
-              <h3>Role Title — Company</h3>
-              <span class="pill">YYYY — YYYY</span>
+              <h3>Computer Vision Engineer — Upjao Agrotech</h3>
+              <span class="pill">Jul 2023 — Aug 2024</span>
             </div>
             <ul class="bullets">
-              <li>Designed / implemented …</li>
-              <li>Measured and improved …</li>
+              <li>Built real-time SKU detection + object tracking using unsupervised MobileSAM + OCR, integrated with a C++/CLI WinForms UI.</li>
+              <li>Developed animal face recognition using transformer-based ConvNeXt with triplet loss; used SuperGlue + LoFTR for local feature matching.</li>
             </ul>
+          </article>
+
+          <article class="timeline">
+            <div class="timeline-top">
+              <h3>Intern — Automation &amp; Digitalization, Siemens Technology and Services</h3>
+              <span class="pill">May 2022 — Jul 2022</span>
+            </div>
+            <ul class="bullets">
+              <li>Causality analysis on time-series data using Granger causality with LSTM-based deep learning models.</li>
+              <li>Weak-signal analysis for emerging technologies; anomaly detection using autoencoders.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Publications</h2>
+          <p class="muted">Peer-reviewed work across lightweight medical imaging + haptic modeling.</p>
+        </div>
+
+        <div class="stack">
+          <article class="paper">
+            <h3>An extremely lightweight CNN model for the diagnosis of Chest Radiographs</h3>
+            <ul class="bullets">
+              <li>0.14M parameters (~550KB) with depthwise + squeeze-expand blocks.</li>
+              <li>Outperformed several SOTA approaches for binary + multiclass classification.</li>
+            </ul>
+            <p class="small muted">Add: Journal URL (you can paste it into this section).</p>
+          </article>
+
+          <article class="paper">
+            <h3>CatBoost for Haptic Modeling of Homogeneous Viscoelastic Deformable Objects</h3>
+            <ul class="bullets">
+              <li>Gradient-boosting-based modeling; strong errors even with just 20% training data.</li>
+            </ul>
+            <p class="small muted">Add: IEEE URL (you can paste it into this section).</p>
+          </article>
+
+          <article class="paper">
+            <h3>Haptic Modeling of Inhomogeneous Viscoelastic Deformable Objects</h3>
+            <ul class="bullets">
+              <li>RF–Fractional Derivative model; relative RMS error &lt; 0.15 while reducing data needs + inference time.</li>
+            </ul>
+            <p class="small muted">Add: Conference paper URL (you can paste it into this section).</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Education</h2>
+        </div>
+
+        <div class="grid-3">
+          <article class="tile">
+            <h3>IIT Jodhpur</h3>
+            <p>Bachelor’s Degree (2019–2023)</p>
+            <p class="small muted">CGPA: 8.1 / 10</p>
+          </article>
+
+          <article class="tile">
+            <h3>CBSE Class 12</h3>
+            <p>2019</p>
+            <p class="small muted">93.8%</p>
+          </article>
+
+          <article class="tile">
+            <h3>CBSE Class 10</h3>
+            <p>2017</p>
+            <p class="small muted">CGPA: 10 / 10</p>
           </article>
         </div>
       </div>
@@ -201,22 +293,42 @@
       <div class="container">
         <div class="section-head">
           <h2>Skills</h2>
-          <p class="muted">Group skills by how you actually use them.</p>
+          <p class="muted">Grouped for readability (and aligned with your resume).</p>
         </div>
 
         <div class="grid-3">
           <article class="tile">
-            <h3>Robotics / CV</h3>
-            <p class="small">Perception, detection/segmentation, calibration basics, dataset curation, eval metrics</p>
+            <h3>Programming</h3>
+            <p class="small">Python, C++, C, MySQL</p>
           </article>
           <article class="tile">
-            <h3>Software</h3>
-            <p class="small">Python, C++ (if applicable), APIs, CLI tools, testing, profiling</p>
+            <h3>Frameworks</h3>
+            <p class="small">PyTorch, TensorFlow, OpenCV</p>
           </article>
           <article class="tile">
-            <h3>Infra / Tooling</h3>
-            <p class="small">Docker, CI, logging/monitoring, experiment tracking, automation scripts</p>
+            <h3>Deployment &amp; Tools</h3>
+            <p class="small">Docker, Triton Inference Server, Git, Linux, GCP, Azure, REST APIs</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Achievements</h2>
+        </div>
+
+        <div class="card pad">
+          <ul class="bullets">
+            <li>JEE Advanced 2019 — top 0.5% among 12.45 lakh students.</li>
+            <li>Second prize — technical paper presentation at INAE Conclave, IIT Jodhpur.</li>
+            <li>HackerRank Gold badges in C++ and Python.</li>
+            <li>A grade — DSA and Deep Learning courses (IIT Jodhpur).</li>
+            <li>CodeChef highest rating 1908; global rank 219 (May Lunchtime 2022).</li>
+            <li>LeetCode: 225+ problems solved (DSA).</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -226,13 +338,14 @@
       <div class="container">
         <div class="section-head">
           <h2>Contact</h2>
-          <p class="muted">The fastest way to reach me:</p>
+          <p class="muted">Fastest ways to reach me:</p>
         </div>
 
         <div class="contact-card">
           <a class="btn" href="https://www.linkedin.com/in/gautam-hcscv/" target="_blank" rel="noreferrer">LinkedIn</a>
           <a class="btn btn-ghost" href="https://github.com/gautamHCSCV" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="btn btn-ghost" href="mailto:gautam.kumar@vimaan.ai">Email</a>
+          <a class="btn btn-ghost" href="mailto:pgautam05112000@gmail.com">Email (personal)</a>
+          <a class="btn btn-ghost" href="mailto:kumar.156@alumini.iitj.ac.in">Email (IITJ)</a>
         </div>
       </div>
     </section>
