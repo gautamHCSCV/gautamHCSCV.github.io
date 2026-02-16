@@ -1,6 +1,6 @@
 const USERNAME = "gautamHCSCV";
 
-// Only show these repos (curated)
+// Curated repos only
 const CURATED_REPOS = [
   "Image-Anonymization-using-Adversarial-Attacks",
   "Number_Plate_detection-using-YOLO-v7",
@@ -13,9 +13,6 @@ const els = {
   grid: document.getElementById("projectsGrid"),
   state: document.getElementById("projectsState"),
   sortMode: document.getElementById("sortMode"),
-  avatar: document.getElementById("ghAvatar"),
-  bio: document.getElementById("ghBio"),
-  location: document.getElementById("ghLocation"),
   menuBtn: document.getElementById("menuBtn"),
   nav: document.getElementById("nav"),
 };
@@ -74,10 +71,9 @@ function repoCard(r) {
 function render(reposToRender) {
   els.grid.innerHTML = "";
   if (!reposToRender.length) {
-    els.state.textContent = "No repositories found (check repo names in CURATED_REPOS).";
+    els.state.textContent = "No repositories found (check CURATED_REPOS names).";
     return;
   }
-
   els.state.textContent = `Showing ${reposToRender.length} selected repositories.`;
   reposToRender.forEach(r => els.grid.appendChild(repoCard(r)));
 }
@@ -87,7 +83,6 @@ function applySort() {
   const arr = repos.slice();
 
   if (mode === "curated") {
-    // keep CURATED_REPOS order
     arr.sort((a, b) => CURATED_REPOS.indexOf(a.name) - CURATED_REPOS.indexOf(b.name));
   } else if (mode === "updated") {
     arr.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
@@ -100,35 +95,14 @@ function applySort() {
   render(arr);
 }
 
-async function fetchGitHubProfile() {
-  try {
-    const res = await fetch(`https://api.github.com/users/${USERNAME}`, {
-      headers: { "Accept": "application/vnd.github+json" }
-    });
-    if (!res.ok) throw new Error(`GitHub user API error: ${res.status}`);
-    const u = await res.json();
-
-    if (u.avatar_url) els.avatar.src = u.avatar_url;
-    els.bio.textContent = u.bio ? u.bio : "ML Engineer • CV • Transformers • Deployment";
-    els.location.textContent = u.location ? u.location : "India (IST)";
-  } catch (e) {
-    // fail silently, keep defaults
-    els.bio.textContent = "ML Engineer • CV • Transformers • Deployment";
-  }
-}
-
 async function fetchCuratedRepos() {
   els.state.textContent = "Loading selected repositories…";
 
   try {
-    // Fetch each curated repo directly (more reliable than pulling all repos)
     const requests = CURATED_REPOS.map(name =>
       fetch(`https://api.github.com/repos/${USERNAME}/${name}`, {
         headers: { "Accept": "application/vnd.github+json" }
-      }).then(async (r) => {
-        if (!r.ok) return null;
-        return r.json();
-      })
+      }).then(async (r) => (r.ok ? r.json() : null))
     );
 
     const data = await Promise.all(requests);
@@ -149,7 +123,6 @@ function setupMobileMenu() {
     els.menuBtn.setAttribute("aria-expanded", String(isOpen));
   });
 
-  // Close menu on link click (mobile)
   els.nav.querySelectorAll("a").forEach(a => {
     a.addEventListener("click", () => {
       if (els.nav.classList.contains("open")) {
@@ -163,5 +136,4 @@ function setupMobileMenu() {
 els.sortMode.addEventListener("change", applySort);
 
 setupMobileMenu();
-fetchGitHubProfile();
 fetchCuratedRepos();
