@@ -3,22 +3,56 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Gautam Kumar — ML Engineer" />
+  <meta name="description" content="Gautam Kumar — ML Engineer specializing in Computer Vision, LLMs, and real-time AI deployment." />
+  <meta name="theme-color" content="#06080f" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gautam Kumar | ML Engineer Portfolio" />
+  <meta property="og:description" content="Building practical ML systems — Computer Vision, Transformers, LLM/VLM, and production deployment." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gautamhcscv.github.io/" />
+
   <title>Gautam Kumar | Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
+  <!-- Ambient background blobs -->
+  <div class="ambient" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Home">
-        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-icon" aria-hidden="true">
+          <span class="brand-dot"></span>
+          <span class="brand-ring"></span>
+        </span>
         <span>Gautam Kumar</span>
       </a>
 
       <button id="menuBtn" class="menu-btn" aria-label="Open menu" aria-expanded="false">
-        <span class="menu-bars" aria-hidden="true"></span>
+        <span class="menu-bars" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
       </button>
 
       <nav id="nav" class="nav" aria-label="Primary">
@@ -28,7 +62,7 @@
         <a href="#education">Education</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
-        <a href="#contact" class="btn btn-small">Contact</a>
+        <a href="#contact" class="btn btn-nav">Contact</a>
       </nav>
     </div>
   </header>
@@ -38,30 +72,35 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">ML Engineer • Computer Vision • LLM • Deployment</p>
+          <div class="hero-badge reveal" data-delay="0">
+            <span class="status-dot"></span>
+            <span>Available for opportunities</span>
+          </div>
 
-          <h1>Building practical ML systems</h1>
+          <p class="eyebrow reveal" data-delay="100">ML Engineer · Computer Vision · LLM · Deployment</p>
 
-          <p class="lede">
+          <h1 class="reveal" data-delay="200">
+            Building <span class="gradient-text">practical ML</span> systems that <span class="gradient-text-alt">ship</span>
+          </h1>
+
+          <p class="lede reveal" data-delay="300">
             Based in Bangalore, Karnataka. I work on real-time vision, transformer models, and LLM/VLM applications;
             with focus on deployment quality, speed, and accuracy.
           </p>
 
-          <div class="hero-cta">
-            <a class="btn" href="#projects">View selected projects</a>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/gautam-hcscv/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="btn btn-ghost" href="https://github.com/gautamHCSCV" target="_blank" rel="noreferrer">GitHub</a>
+          <div class="hero-cta reveal" data-delay="400">
+            <a class="btn btn-primary" href="#projects">
+              <span>View Projects</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+            <a class="btn btn-outline" href="https://www.linkedin.com/in/gautam-hcscv/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn btn-outline" href="https://github.com/gautamHCSCV" target="_blank" rel="noreferrer">GitHub</a>
           </div>
-
-          <!-- <div class="mini-kpis">
-            <span class="chip">2.5+ years experience</span>
-            <span class="chip">CV + Transformers</span>
-            <span class="chip">LLM/VLM + Triton</span>
-          </div> -->
         </div>
 
-        <aside class="hero-card" aria-label="Quick info">
-          <div class="card">
+        <aside class="hero-card reveal" data-delay="300" aria-label="Quick info">
+          <div class="glass-card">
+            <div class="card-glow" aria-hidden="true"></div>
             <div class="profile">
               <div class="avatar-ring">
                 <img
@@ -75,7 +114,7 @@
 
               <div class="profile-meta">
                 <div class="profile-name">Gautam Kumar</div>
-                <div class="profile-sub muted small">Bangalore, Karnataka, India</div>
+                <div class="profile-sub">Bangalore, Karnataka, India</div>
               </div>
             </div>
 
@@ -84,7 +123,6 @@
                 <dt>Email</dt>
                 <dd class="links">
                   <a href="mailto:pgautam05112000@gmail.com">pgautam05112000@gmail.com</a>
-                  <!-- <a href="mailto:kumar.156@alumini.iitj.ac.in">kumar.156@alumini.iitj.ac.in</a> -->
                 </dd>
               </div>
               <div>
@@ -105,8 +143,6 @@
             <div class="tags">
               <span class="tag">Python</span>
               <span class="tag">ML</span>
-              <!-- <span class="tag">TensorFlow</span>
-              <span class="tag">OpenCV</span> -->
               <span class="tag">Docker</span>
               <span class="tag">Triton</span>
             </div>
@@ -118,12 +154,12 @@
     <!-- HIGHLIGHTS -->
     <section id="highlights" class="section">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
+          <span class="section-label">Overview</span>
           <h2>Highlights</h2>
-          <!-- <p class="muted">Quick snapshot + a few outcomes.</p> -->
         </div>
 
-        <div class="about card pad">
+        <div class="about glass-card pad reveal">
           <h3 class="h3">About</h3>
           <p class="muted">
             ML Engineer with 2.5+ years of experience in building and deploying real-time computer vision systems,
@@ -132,63 +168,94 @@
           </p>
         </div>
 
-        <!-- <div class="grid-3 mt">
-          <article class="tile">
-            <h3>LLM QA for Key Value Extraction</h3>
-            <p>Benchmarked and fine-tuned LLM QA models for key-value extraction from OCR context.</p>
-          </article>
-          <article class="tile">
-            <h3>Crate Management Automation</h3>
-            <p>Employ unsupervised Mobile SAM and OCR for real-time SKU detection.</p>
-          </article>
-          <article class="tile">
-            <h3>VLM work</h3>
-            <p>Florence-2 finetuning and benchmarking for captioning/QA/detection.</p>
-          </article>
-        </div> -->
+        <div class="stats-grid">
+          <div class="stat-card reveal" data-delay="0">
+            <span class="stat-number" data-count="2.5">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-card reveal" data-delay="100">
+            <span class="stat-number" data-count="3">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Publications</span>
+          </div>
+          <div class="stat-card reveal" data-delay="200">
+            <span class="stat-number" data-count="70">0</span><span class="stat-suffix">%</span>
+            <span class="stat-label">Latency Reduction</span>
+          </div>
+          <div class="stat-card reveal" data-delay="300">
+            <span class="stat-number" data-count="8.1">0</span><span class="stat-suffix">/10</span>
+            <span class="stat-label">CGPA @ IIT Jodhpur</span>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- EXPERIENCE -->
     <section id="experience" class="section">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
+          <span class="section-label">Career</span>
           <h2>Experience</h2>
         </div>
 
-        <div class="stack">
-          <article class="timeline">
-            <div class="timeline-top">
-              <h3>Machine Learning Engineer — Vimaan Robotics</h3>
-              <span class="pill">Sep 2024 — Present</span>
+        <div class="timeline-stack">
+          <article class="timeline-item reveal">
+            <div class="timeline-marker">
+              <span class="timeline-dot active"></span>
+              <span class="timeline-line"></span>
             </div>
-            <ul class="bullets">
-              <li>Benchmarked + fine-tuned LLM QA for key-value extraction; deployed DeBERTa-v3 on Triton (~70% latency reduction).</li>
-              <li>Built YOLOv8 segmentation pipeline for damaged-region detection + defect classification.</li>
-              <li>Fine-tuned + benchmarked Florence-2 VLM for detection, image captioning, and QA.</li>
-            </ul>
+            <div class="timeline-content glass-card">
+              <div class="timeline-top">
+                <div>
+                  <h3>Machine Learning Engineer</h3>
+                  <p class="timeline-company">Vimaan Robotics</p>
+                </div>
+                <span class="pill">Sep 2024 — Present</span>
+              </div>
+              <ul class="bullets">
+                <li>Benchmarked + fine-tuned LLM QA for key-value extraction; deployed DeBERTa-v3 on Triton (~70% latency reduction).</li>
+                <li>Built YOLOv8 segmentation pipeline for damaged-region detection + defect classification.</li>
+                <li>Fine-tuned + benchmarked Florence-2 VLM for detection, image captioning, and QA.</li>
+              </ul>
+            </div>
           </article>
 
-          <article class="timeline">
-            <div class="timeline-top">
-              <h3>Computer Vision Engineer — Upjao Agrotech</h3>
-              <span class="pill">Jul 2023 — Aug 2024</span>
+          <article class="timeline-item reveal" data-delay="100">
+            <div class="timeline-marker">
+              <span class="timeline-dot"></span>
+              <span class="timeline-line"></span>
             </div>
-            <ul class="bullets">
-              <li>Built real-time SKU detection + tracking using MobileSAM + OCR; integrated with a C++/CLI WinForms UI.</li>
-              <li>Animal face recognition using ConvNeXt + triplet loss; explored SuperGlue/LoFTR matching.</li>
-            </ul>
+            <div class="timeline-content glass-card">
+              <div class="timeline-top">
+                <div>
+                  <h3>Computer Vision Engineer</h3>
+                  <p class="timeline-company">Upjao Agrotech</p>
+                </div>
+                <span class="pill">Jul 2023 — Aug 2024</span>
+              </div>
+              <ul class="bullets">
+                <li>Built real-time SKU detection + tracking using MobileSAM + OCR; integrated with a C++/CLI WinForms UI.</li>
+                <li>Animal face recognition using ConvNeXt + triplet loss; explored SuperGlue/LoFTR matching.</li>
+              </ul>
+            </div>
           </article>
 
-          <article class="timeline">
-            <div class="timeline-top">
-              <h3>Intern — Siemens Technology and Services</h3>
-              <span class="pill">May 2022 — Jul 2022</span>
+          <article class="timeline-item reveal" data-delay="200">
+            <div class="timeline-marker">
+              <span class="timeline-dot"></span>
             </div>
-            <ul class="bullets">
-              <li>Causality analysis on time-series data (Granger causality) with LSTM-based models.</li>
-              <li>Weak-signal analysis; anomaly detection using autoencoders.</li>
-            </ul>
+            <div class="timeline-content glass-card">
+              <div class="timeline-top">
+                <div>
+                  <h3>Intern</h3>
+                  <p class="timeline-company">Siemens Technology and Services</p>
+                </div>
+                <span class="pill">May 2022 — Jul 2022</span>
+              </div>
+              <ul class="bullets">
+                <li>Causality analysis on time-series data (Granger causality) with LSTM-based models.</li>
+                <li>Weak-signal analysis; anomaly detection using autoencoders.</li>
+              </ul>
+            </div>
           </article>
         </div>
       </div>
@@ -197,37 +264,56 @@
     <!-- PUBLICATIONS -->
     <section id="publications" class="section">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
+          <span class="section-label">Research</span>
           <h2>Publications</h2>
           <p class="muted">Peer-reviewed work</p>
         </div>
 
-        <div class="stack">
-          <article class="paper">
-            <h3>
-              <a href="https://aapm.onlinelibrary.wiley.com/doi/abs/10.1002/mp.16722" target="_blank" rel="noreferrer">
-                An extremely lightweight CNN model for the diagnosis of Chest Radiographs
-              </a>
-            </h3>
-            <p class="muted small">Medical Physics (Wiley) • Lightweight CNN (~0.14M params) with strong classification performance.</p>
+        <div class="pub-stack">
+          <article class="pub-card reveal">
+            <div class="pub-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+            </div>
+            <div class="pub-body">
+              <h3>
+                <a href="https://aapm.onlinelibrary.wiley.com/doi/abs/10.1002/mp.16722" target="_blank" rel="noreferrer">
+                  An extremely lightweight CNN model for the diagnosis of Chest Radiographs
+                </a>
+              </h3>
+              <p class="muted small">Medical Physics (Wiley) · Lightweight CNN (~0.14M params) with strong classification performance.</p>
+            </div>
+            <svg class="pub-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
           </article>
 
-          <article class="paper">
-            <h3>
-              <a href="https://ieeexplore.ieee.org/document/10224477" target="_blank" rel="noreferrer">
-                CatBoost for Haptic Modeling of Homogeneous Viscoelastic Deformable Objects
-              </a>
-            </h3>
-            <p class="muted small">IEEE Xplore • Gradient-boosting approach for haptic modeling.</p>
+          <article class="pub-card reveal" data-delay="100">
+            <div class="pub-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+            </div>
+            <div class="pub-body">
+              <h3>
+                <a href="https://ieeexplore.ieee.org/document/10224477" target="_blank" rel="noreferrer">
+                  CatBoost for Haptic Modeling of Homogeneous Viscoelastic Deformable Objects
+                </a>
+              </h3>
+              <p class="muted small">IEEE Xplore · Gradient-boosting approach for haptic modeling.</p>
+            </div>
+            <svg class="pub-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
           </article>
 
-          <article class="paper">
-            <h3>
-              <a href="https://link.springer.com/chapter/10.1007/978-3-031-70058-3_33" target="_blank" rel="noreferrer">
-                Haptic Modeling of Inhomogeneous Viscoelastic Deformable Objects
-              </a>
-            </h3>
-            <p class="muted small">Springer • Modeling viscoelastic deformable objects with reduced data + inference needs.</p>
+          <article class="pub-card reveal" data-delay="200">
+            <div class="pub-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+            </div>
+            <div class="pub-body">
+              <h3>
+                <a href="https://link.springer.com/chapter/10.1007/978-3-031-70058-3_33" target="_blank" rel="noreferrer">
+                  Haptic Modeling of Inhomogeneous Viscoelastic Deformable Objects
+                </a>
+              </h3>
+              <p class="muted small">Springer · Modeling viscoelastic deformable objects with reduced data + inference needs.</p>
+            </div>
+            <svg class="pub-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
           </article>
         </div>
       </div>
@@ -236,13 +322,21 @@
     <!-- EDUCATION -->
     <section id="education" class="section">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
+          <span class="section-label">Academics</span>
           <h2>Education</h2>
         </div>
 
-        <div class="card pad">
-          <h3 class="h3">Indian Institute of Technology, Jodhpur</h3>
-          <p class="muted">Bachelor’s Degree • 2019–2023 • CGPA: 8.1 / 10</p>
+        <div class="edu-card glass-card pad reveal">
+          <div class="edu-top">
+            <div class="edu-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 10 5 10-5-10-5z"/><path d="m6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <div>
+              <h3 class="h3">Indian Institute of Technology, Jodhpur</h3>
+              <p class="muted">Bachelor's Degree · 2019–2023 · CGPA: 8.1 / 10</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -250,10 +344,11 @@
     <!-- PROJECTS -->
     <section id="projects" class="section">
       <div class="container">
-        <div class="section-head row">
+        <div class="section-head row reveal">
           <div>
+            <span class="section-label">Work</span>
             <h2>Projects</h2>
-            <p class="muted">Only 4 repos (curated). Loaded live from GitHub.</p>
+            <p class="muted">Curated repositories, loaded live from GitHub.</p>
           </div>
 
           <div class="controls">
@@ -266,7 +361,10 @@
           </div>
         </div>
 
-        <div id="projectsState" class="muted small">Loading selected repositories…</div>
+        <div id="projectsState" class="projects-state">
+          <div class="loader" aria-hidden="true"></div>
+          <span>Loading selected repositories…</span>
+        </div>
         <div id="projectsGrid" class="grid-2" aria-live="polite"></div>
       </div>
     </section>
@@ -274,20 +372,30 @@
     <!-- SKILLS -->
     <section id="skills" class="section">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
+          <span class="section-label">Toolkit</span>
           <h2>Skills</h2>
         </div>
 
         <div class="grid-3">
-          <article class="tile">
+          <article class="skill-card reveal" data-delay="0">
+            <div class="skill-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
             <h3>Programming</h3>
             <p class="small muted">Python, C++, C</p>
           </article>
-          <article class="tile">
+          <article class="skill-card reveal" data-delay="100">
+            <div class="skill-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            </div>
             <h3>Frameworks</h3>
             <p class="small muted">PyTorch, TensorFlow, OpenCV</p>
           </article>
-          <article class="tile">
+          <article class="skill-card reveal" data-delay="200">
+            <div class="skill-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
             <h3>Deployment</h3>
             <p class="small muted">Docker, Triton Inference Server, Git, Linux, GCP, Azure, REST APIs</p>
           </article>
@@ -298,16 +406,19 @@
     <!-- CONTACT -->
     <section id="contact" class="section">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
+          <span class="section-label">Get in Touch</span>
           <h2>Contact</h2>
           <p class="muted">Ways to reach me:</p>
         </div>
 
-        <div class="contact-card">
-          <a class="btn" href="https://www.linkedin.com/in/gautam-hcscv/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn btn-ghost" href="https://github.com/gautamHCSCV" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="btn btn-ghost" href="mailto:pgautam05112000@gmail.com">Email</a>
-          <!-- <a class="btn btn-ghost" href="tel:+919523730105" target="_blank" rel="noreferrer">Mobile: 9523730105</a> -->
+        <div class="contact-card glass-card reveal">
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/gautam-hcscv/" target="_blank" rel="noreferrer">
+            <span>LinkedIn</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+          <a class="btn btn-outline" href="https://github.com/gautamHCSCV" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn btn-outline" href="mailto:pgautam05112000@gmail.com">Email</a>
         </div>
       </div>
     </section>
@@ -316,9 +427,13 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <span class="small muted">© <span id="year"></span> Gautam Kumar</span>
-      <a class="small" href="#top">Back to top ↑</a>
+      <a class="small back-top" href="#top">Back to top ↑</a>
     </div>
   </footer>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
 
   <script src="./script.js"></script>
 </body>
